@@ -7,4 +7,4 @@
 > ### "Absolute cinema"
 >
 > #### — *Мартин Скорсезе*
-![Картинка](resources\images\MartinScorsese.png)
+![Картинка](resources/images/MartinScorsese.png)
