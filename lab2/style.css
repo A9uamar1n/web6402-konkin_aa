@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #141821;
+
+    color: #f0f0f0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    color: #ff9800;
+    font-family: "Courier New", monospace;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/*картинка*/
+img {
+    max-width: 80%;
+    height: auto;
+}
+
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figcaption {
+    color: #8a94a6;
+    font-size: 0.9rem;
+}
+/*/картинка*/
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: #8a94a6;
+}
+
+/*топ*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #212735;
+    border-bottom: 2px solid #ff9800;
+}
+
+header > a {
+    font-family: "Courier New", monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#timeline-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    transition: 0.3s;
+    background-color: rgba(245, 158, 11, 0.15);
+    text-shadow: 0 0 8px #ff9800;
+}
+/*/топ*/
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff9800;
+    color: #141821;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/*карточки*/
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 1.25rem;
+    background-color: #212735;
+    border: 1px solid #313a4d;
+    border-left: 4px solid #ff9800;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+/*/карточки*/
+
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background-color: #212735;
+    border-left: 4px solid #ff9800;
+}
+
+blockquote p {
+    margin-bottom: 0.5rem;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    color: #8a94a6;
+    font-style: normal;
+    text-align: right;
+}
+
+#main-terminal {
+    min-height: 60vh;
+}
+
+/*таблица*/
+.tour-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    background-color: #212735;
+}
+
+.tour-table caption {
+    padding: 0.75rem 0;
+    color: #ff9800;
+    font-family: "Courier New", monospace;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.tour-table th {
+    padding: 0.75rem 1rem;
+    background-color: #141821;
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+}
+
+.tour-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #313a4d;
+}
+
+.tour-table tbody tr:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+.col-left {
+    text-align: left;
+}
+
+.col-center {
+    text-align: center;
+}
+
+.col-right {
+    text-align: right;
+}
+/*/таблица*/
+
+.risk-badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.risk-low {
+    background-color: #2ecc71;
+}
+
+.risk-mid {
+    background-color: #f39c12;
+}
+
+.risk-high {
+    background-color: #e74c3c;
+}
+
+.warning-box {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 2px dashed #ff9800;
+    border-radius: 6px;
+}
+
+address {
+    padding: 1rem 1.5rem;
+    background-color: #212735;
+    border-left: 4px solid #ff9800;
+    font-style: normal;
+}
