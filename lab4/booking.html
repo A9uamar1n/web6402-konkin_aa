@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chronos Tours — Бронирование прыжка</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html" class="header__logo">Chronos Tours</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="tours.html" class="nav__link">Каталог эпох</a></li>
+                    <li><a href="safety.html" class="nav__link">Памятка хрононавта</a></li>
+                    <li><a href="booking.html" class="nav__link nav__link--active">Бронирование</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <h1>Бронирование прыжка</h1>
+            <p>Заполните заявку, и мы забронируем для вас место в ближайшем отправлении.</p>
+            <form class="form" id="booking-form" action="#" method="post">
+                <div class="form__group">
+                    <label class="form__label" for="name">Имя хрононавта</label>
+                    <input class="form__input" type="text" id="name" name="name" placeholder="Например, Эдвард Бёрнс" required>
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="email">Электронная почта</label>
+                    <input class="form__input" type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="epoch">Эпоха</label>
+                    <select class="form__input" id="epoch" name="epoch" required>
+                        <option value="">— выберите эпоху —</option>
+                        <option value="Античные Афины">Античные Афины</option>
+                        <option value="Юрский период">Юрский период</option>
+                        <option value="Париж 1920-х">Париж 1920-х</option>
+                        <option value="Викторианский Лондон">Викторианский Лондон</option>
+                        <option value="Древний Египет">Древний Египет</option>
+                        <option value="Эпоха викингов">Эпоха викингов</option>
+                        <option value="Меловой период">Меловой период</option>
+                        <option value="Нью-Йорк 2300-х">Нью-Йорк 2300-х</option>
+                    </select>
+                </div>
+                <fieldset class="form__group">
+                    <legend class="form__label">Страховка</legend>
+                    <label class="form__option"><input class="form__radio" type="radio" name="insurance" value="Базовая" checked> Базовая</label>
+                    <label class="form__option"><input class="form__radio" type="radio" name="insurance" value="Расширенная"> Расширенная (покрывает критические ситуации)</label>
+                </fieldset>
+                <div class="form__group">
+                    <label class="form__label" for="comment">Пожелания</label>
+                    <textarea class="form__input form__input--textarea" id="comment" name="comment" placeholder="Например, не хочу встречаться с самим собой"></textarea>
+                </div>
+                <div class="form__group">
+                    <label class="form__checkbox-label">
+                        <input class="form__checkbox" type="checkbox" id="agree" name="agree" required>
+                        <span>Я согласен на обработку данных и подписываю отказ от претензий</span>
+                    </label>
+                </div>
+                <button class="button" type="submit">Отправить заявку</button>
+                <p class="form__message form__message--hidden" id="form-message">Заявка отправлена!</p>
+            </form>
+        </main>
+        <footer class="footer">
+            <p><small>© Chronos Tours, 2026. Возврат в ваше настоящее гарантирован.</small></p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+
+</html>

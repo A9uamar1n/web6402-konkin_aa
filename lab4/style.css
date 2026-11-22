@@ -1,0 +1,466 @@
+/* ===== Переменные (все цвета сайта задаются только здесь) ===== */
+:root {
+    --color-bg: #141821;
+    --color-surface: #212735;
+    --color-border: #313a4d;
+    --color-accent: #ff9800;
+    --color-accent-soft: rgba(245, 158, 11, 0.15);
+    --color-accent-faint: rgba(245, 158, 11, 0.1);
+    --color-text: #f0f0f0;
+    --color-muted: #8a94a6;
+    --color-dark: #000000;
+    --color-risk-low: #2ecc71;
+    --color-risk-mid: #f39c12;
+    --color-risk-high: #e74c3c;
+}
+
+/* ===== Общие стили ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+
+    color: var(--color-text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    color: var(--color-accent);
+    font-family: "Courier New", monospace;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Блок header (flexbox) ===== */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.header__logo {
+    font-family: "Courier New", monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* ===== Блок nav ===== */
+.nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+}
+
+.nav__link:hover {
+    transition: 0.3s;
+    background-color: var(--color-accent-soft);
+    text-shadow: 0 0 8px var(--color-accent);
+}
+
+.nav__link--active {
+    background-color: var(--color-accent-soft);
+}
+
+/* ===== Блок main ===== */
+.main {
+    max-width: 960px;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+}
+
+/* ===== Блок footer ===== */
+.footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-muted);
+}
+
+/* ===== Блок button ===== */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0 0 12px var(--color-accent);
+}
+
+/* ===== Блок hero (flexbox: текст слева, портал справа) ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero__content {
+    flex: 1 1 300px;
+}
+
+/* ===== Блок portal (CSS-анимация) ===== */
+.portal {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.portal__ring {
+    position: absolute;
+    border-radius: 50%;
+    animation: portal-spin 8s linear infinite;
+}
+
+.portal__ring--outer {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px dashed var(--color-accent);
+    box-shadow: 0 0 25px var(--color-accent-soft);
+}
+
+.portal__ring--middle {
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    border: 3px dotted var(--color-muted);
+    animation-direction: reverse;
+    animation-duration: 5s;
+}
+
+.portal__ring--inner {
+    top: 55px;
+    left: 55px;
+    right: 55px;
+    bottom: 55px;
+    border: 3px dashed var(--color-accent);
+    animation-duration: 3s;
+}
+
+.portal__core {
+    position: absolute;
+    top: 85px;
+    left: 85px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 30px var(--color-accent);
+}
+
+@keyframes portal-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Блок cards (flexbox) ===== */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 1.25rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 8px;
+}
+
+.card__title {
+    margin-top: 0;
+}
+
+.card__text {
+    margin-bottom: 0;
+}
+
+/* ===== Блок quote ===== */
+.quote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+}
+
+.quote__text {
+    margin-bottom: 0.5rem;
+}
+
+.quote__author {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-muted);
+    font-style: normal;
+    text-align: right;
+}
+
+/* ===== Блок tour-table ===== */
+.tour-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+}
+
+.tour-table__caption {
+    padding: 0.75rem 0;
+    color: var(--color-accent);
+    font-family: "Courier New", monospace;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.tour-table__cell {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tour-table__cell--head {
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.tour-table__cell--left {
+    text-align: left;
+}
+
+.tour-table__cell--center {
+    text-align: center;
+}
+
+.tour-table__cell--right {
+    text-align: right;
+}
+
+.tour-table__row:hover {
+    background-color: var(--color-accent-faint);
+}
+
+/* ===== Блок badge ===== */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.badge--low {
+    background-color: var(--color-risk-low);
+}
+
+.badge--mid {
+    background-color: var(--color-risk-mid);
+}
+
+.badge--high {
+    background-color: var(--color-risk-high);
+}
+
+/* ===== Блок safety (grid) ===== */
+.safety {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "suit rules"
+        "contacts contacts";
+    gap: 1.5rem;
+}
+
+.safety__suit {
+    grid-area: suit;
+}
+
+.safety__rules {
+    grid-area: rules;
+}
+
+.safety__contacts {
+    grid-area: contacts;
+}
+
+.safety__title {
+    margin-top: 0;
+}
+
+/* ===== Блок figure ===== */
+.figure {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.figure__image {
+    max-height: 320px;
+}
+
+.figure__caption {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+/* ===== Блок warning ===== */
+.warning {
+    margin: 0 0 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-accent-faint);
+    border: 2px dashed var(--color-accent);
+    border-radius: 6px;
+}
+
+.warning__text {
+    margin-bottom: 0;
+}
+
+/* ===== Блок contacts ===== */
+.contacts {
+    padding: 1rem 1.5rem;
+    background-color: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+    font-style: normal;
+}
+
+/* ===== Блок form (страница бронирования) ===== */
+.form {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 8px;
+}
+
+.form__group {
+    margin: 0 0 1rem;
+    padding: 0;
+    border: none;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    color: var(--color-muted);
+}
+
+.form__input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent);
+}
+
+.form__input--textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form__option {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.form__radio,
+.form__checkbox {
+    accent-color: var(--color-accent);
+}
+
+.form__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.form__message {
+    margin: 1rem 0 0;
+    color: var(--color-risk-low);
+    font-weight: bold;
+}
+
+.form__message--hidden {
+    display: none;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 700px) {
+    .safety {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "suit"
+            "rules"
+            "contacts";
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
